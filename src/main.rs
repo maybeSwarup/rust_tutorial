@@ -7,12 +7,7 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let my_age = 21;
-    let voting_age = 18;
-
-    match my_age.cmp(&voting_age) {
-        Ordering::Less => println!("can't vote"),
-        Ordering::Equal => println!("Your've gained right to vote!"),
-        Ordering::Greater => println!("can vote"),
-    }
+    let arr_1 = [1, 2, 3, 4];
+    println!("First: {}", arr_1[0]);
+    println!("Length: {}", arr_1.len());
 }
