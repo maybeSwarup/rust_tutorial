@@ -7,8 +7,12 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let my_age = 27;
-    let can_vote = if my_age >= 18 { true } else { false };
+    let age2 = 165;
 
-    println!("Can Vote {}!", can_vote);
+    match age2 {
+        1..=18 => println!("Imortant Birthday!"),
+        21 | 51 => println!("Not important birthday"),
+        65..=i32::MAX => println!("Not at all important birthday!"),
+        _ => println!("What is Birthday?"),
+    }
 }
