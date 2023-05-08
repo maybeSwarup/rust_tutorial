@@ -7,12 +7,12 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let age2 = 165;
+    let my_age = 21;
+    let voting_age = 18;
 
-    match age2 {
-        1..=18 => println!("Imortant Birthday!"),
-        21 | 51 => println!("Not important birthday"),
-        65..=i32::MAX => println!("Not at all important birthday!"),
-        _ => println!("What is Birthday?"),
+    match my_age.cmp(&voting_age) {
+        Ordering::Less => println!("can't vote"),
+        Ordering::Equal => println!("Your've gained right to vote!"),
+        Ordering::Greater => println!("can vote"),
     }
 }
