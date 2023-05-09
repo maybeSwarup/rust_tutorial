@@ -7,10 +7,12 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let arr_2 = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-    let mut loop_idx = 0;
+    let my_tuple: (u8, String, f64) = (47, "Swarup".to_string(), 50_000.00);
 
-    for val in arr_2.iter() {
-        println!("Val: {}", val);
-    }
+    println!("Name: {}", my_tuple.1);
+
+    let (v1, v2, v3) = my_tuple;
+    println!("Age: {}", v1);
+    println!("Name: {}", v2);
+    println!("Money: {}", v3);
 }
