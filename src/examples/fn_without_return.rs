@@ -6,11 +6,10 @@ use std::fs::File;
 use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
-fn get_2(x: i32) -> (i32, i32) {
-    return (x + 1, x + 2);
+fn get_sum(x: i32, y: i32) -> i32 {
+    x + y
 }
 
 fn main() {
-    let (val_1, val_2) = get_2(3);
-    println!("Nums: {} {}", val_1, val_2);
+    println!("{}", get_sum(5, 4))
 }
