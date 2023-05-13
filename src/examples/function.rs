@@ -6,10 +6,10 @@ use std::fs::File;
 use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
-fn get_sum(x: i32, y: i32) -> i32 {
-    x + y
+fn get_sum(x: i32, y: i32) {
+    println!("{} + {} = {}", x, y, x + y)
 }
 
 fn main() {
-    println!("{}", get_sum(5, 4))
+    get_sum(5, 4);
 }
