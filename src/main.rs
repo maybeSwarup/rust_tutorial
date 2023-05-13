@@ -7,12 +7,15 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let my_tuple: (u8, String, f64) = (47, "Swarup".to_string(), 50_000.00);
+    let mut str1 = String::new();
 
-    println!("Name: {}", my_tuple.1);
+    str1.push('A');
+    str1.push_str(" word");
 
-    let (v1, v2, v3) = my_tuple;
-    println!("Age: {}", v1);
-    println!("Name: {}", v2);
-    println!("Money: {}", v3);
+    for word in str1.split_whitespace() {
+        println!("{}", word);
+    }
+
+    let str2 = str1.replace("A", "Another");
+    println!("{}", str2);
 }
