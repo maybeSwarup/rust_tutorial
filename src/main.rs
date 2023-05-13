@@ -7,15 +7,29 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let mut str1 = String::new();
+    let st3 = String::from("x r t b h k k a n c");
+    let mut v1: Vec<char> = st3.chars().collect();
 
-    str1.push('A');
-    str1.push_str(" word");
+    v1.sort();
+    v1.dedup(); // remove duplicates
 
-    for word in str1.split_whitespace() {
-        println!("{}", word);
+    for char in v1 {
+        println!("{}", char);
     }
 
-    let str2 = str1.replace("A", "Another");
-    println!("{}", str2);
+    let st4: &str = "Random string";
+    let mut st5: String = st4.to_string();
+    println!("{}", st5);
+
+    let byte_arr1 = st5.as_bytes();
+    let st6 = &st5[0..6];
+    println!("String {} length {}", st6, st6.len());
+    st5.clear();
+
+    let st6 = String::from("Just some");
+    let st7 = String::from(" words");
+    let st8 = st6 + &st7;
+    for char in st8.bytes() {
+        println!("{}", char);
+    }
 }
