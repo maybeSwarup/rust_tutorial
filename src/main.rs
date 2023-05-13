@@ -7,9 +7,35 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let int_u8: u8 = 5;
-    let int2_u8: u8 = 4;
-    let int3_u32: u32 = (int_u8 as u32) + (int_u8 as u32);
+    enum Day {
+        Monday,
+        Tuesday,
+        Wednesday,
+        Thursday,
+        Friday,
+        Saturday,
+        Sunday,
+    }
 
-    println!("{} + {} = {}", int_u8, int2_u8, int3_u32);
+    impl Day {
+        fn is_weekend(&self) -> bool {
+            match self {
+                Day::Saturday | Day::Sunday => true,
+                _ => false,
+            }
+        }
+    }
+
+    let today: Day = Day::Monday;
+    match today {
+        Day::Monday => println!("Everyone Hates monday!"),
+        Day::Tuesday => println!("Donut day"),
+        Day::Wednesday => println!("Hump day"),
+        Day::Thursday => println!("pay day"),
+        Day::Friday => println!("Almost weekend"),
+        Day::Saturday => println!("Weekend!"),
+        Day::Sunday => println!("Weekend."),
+    }
+
+    println!("Is today a weekend {}", today.is_weekend())
 }
