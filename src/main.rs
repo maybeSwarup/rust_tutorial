@@ -8,7 +8,14 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    // let var_name = |parameters| -> return_type{BODY}
-    let can_vote = |age: i32| age >= 18;
-    println!("Can vote; {}", can_vote(8));
+    // closures can access variables outside of it's body
+    let mut samp1 = 5;
+    let print_var = || println!("samp1 = {}", samp1);
+    print_var();
+    samp1 = 10;
+    let mut change_var = || samp1 += 1;
+    change_var();
+    println!("samp1 = {}", samp1);
+    samp1 = 10;
+    println!("samp1 = {}", samp1);
 }
