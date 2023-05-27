@@ -8,13 +8,7 @@ use std::io;
 use std::io::{BufRead, BufReader, ErrorKind, Write};
 
 fn main() {
-    let mut arr_it = [1, 2, 3, 4];
-    for val in arr_it.iter() {
-        println!("{}", val);
-    }
-
-    let mut iter1 = arr_it.iter();
-    println!("1st; {:?}", iter1.next());
-    println!("2nd; {:?}", iter1.next());
-    println!("3rd; {:?}", iter1.next());
+    // let var_name = |parameters| -> return_type{BODY}
+    let can_vote = |age: i32| age >= 18;
+    println!("Can vote; {}", can_vote(8));
 }
